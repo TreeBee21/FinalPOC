@@ -56,6 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Proof of concept.sln",
+    "dotnet.defaultSolution": "FinalPOC.sln",
     "git.ignoreLimitWarning": true
 }

@@ -2,10 +2,10 @@ using Microsoft.MixedReality.QR;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
-using TMPro; // Import for TextMeshPro
 
 public class QrTracker : MonoBehaviour
 {
@@ -13,9 +13,6 @@ public class QrTracker : MonoBehaviour
 
     [SerializeField] UnityEvent<string> WebCamDenied = new();
     [SerializeField] UnityEvent WebCamGranted = new();
-
-    [Header("UI Elements")]
-    [SerializeField] private TextMeshPro qrText; // Reference to TextMeshPro
 
     [SerializeField] QrMarker markerTemplate;
     public bool IsTracking { get; private set; } = false;
@@ -41,7 +38,6 @@ public class QrTracker : MonoBehaviour
     private void Start()
     {
         StartTracking();
-        QrSelected.AddListener(UpdateUI); // Subscribe to update text when a QR code is selected
     }
 
     private void OnEnable()
@@ -75,6 +71,7 @@ public class QrTracker : MonoBehaviour
     {
         if (qrTracker == null && accessStatus == QRCodeWatcherAccessStatus.Allowed && (!IsInitialized))
         {
+            
             Initialize();
         }
         if (selectOnCooldown)
@@ -130,6 +127,7 @@ public class QrTracker : MonoBehaviour
         }
         if (newCodes.Count > 0)
         {
+            
             AttachMarkers(newCodes);
         }
     }
@@ -140,8 +138,10 @@ public class QrTracker : MonoBehaviour
     {
         try
         {
+            
             foreach (QRCode code in codes)
             {
+                
                 AttachMarker(code);
             }
         }
@@ -163,7 +163,7 @@ public class QrTracker : MonoBehaviour
         } 
         catch (Exception e) 
         {
-            
+           
         }
     }
 
@@ -191,19 +191,4 @@ public class QrTracker : MonoBehaviour
         SelectQr(bufferedData);
     }
 
-    /// <summary>
-    /// Updates the TextMeshPro component when a QR code is scanned.
-    /// </summary>
-    /// <param name="data">The text data from the QR code.</param>
-    private void UpdateUI(string data)
-    {
-        if (qrText != null)
-        {
-            qrText.text = $"QR Code Data: {data}";
-        }
-        else
-        {
-            Debug.LogError("No TextMeshPro reference assigned!");
-        }
-    }
 }

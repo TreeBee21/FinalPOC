@@ -2,10 +2,34 @@ using UnityEngine;
 
 public class HandMenuManager : MonoBehaviour
 {
-    [Header("StackAssist Menu")]
-    [SerializeField] private GameObject stackAssistMenu;
+    [Header("Menus")]
+    [SerializeField] private GameObject stackAssistMenu; // StackAssist menu
+    [SerializeField] private GameObject qrMenu; // QR menu
 
-    // Button #1 in the hand menu: Show Route A->B
+    // Button #1 in the hand menu: Toggle the QR menu
+    public void ToggleQrMenu()
+    {
+        if (qrMenu == null)
+        {
+            Debug.LogError("QR Menu is not assigned in the Inspector!");
+            return;
+        }
+
+        // Toggle the active state of the qrMenu
+        bool isActive = qrMenu.activeSelf;
+        qrMenu.SetActive(!isActive);
+
+        if (!isActive)
+        {
+            Debug.Log("Hand Menu Button (QR Menu) pressed: QR menu is now visible.");
+        }
+        else
+        {
+            Debug.Log("Hand Menu Button (QR Menu) pressed: QR menu is now hidden.");
+        }
+    }
+
+    // Button #2 in the hand menu: Show Route A->B
     public void ShowRouteAB()
     {
         // Find the SimpleRouteDisplay in the scene
@@ -25,7 +49,7 @@ public class HandMenuManager : MonoBehaviour
         Debug.Log("Hand Menu Button 1 pressed: Displayed the route A->B.");
     }
 
-    // Button #2 in the hand menu: Show Route B->C
+    // Button #3 in the hand menu: Show Route B->C
     public void ShowRouteBC()
     {
         // Find the SimpleRouteDisplay in the scene
@@ -45,7 +69,7 @@ public class HandMenuManager : MonoBehaviour
         Debug.Log("Hand Menu Button 2 pressed: Displayed the route B->C.");
     }
 
-    // Button #3 in the hand menu: Toggle the StackAssist menu
+    // Button #4 in the hand menu: Toggle the StackAssist menu
     public void ToggleStackAssistMenu()
     {
         if (stackAssistMenu == null)
