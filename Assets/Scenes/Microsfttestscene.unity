@@ -5305,6 +5305,66 @@ MonoBehaviour:
   - {fileID: 917598905}
   - {fileID: 815756364}
   - {fileID: 500159791}
+  OnRouteABActivated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1859374238}
+        m_TargetAssemblyTypeName: PackageInfoManager, Assembly-CSharp
+        m_MethodName: OnRouteABActivated
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnRouteABDeactivated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1859374238}
+        m_TargetAssemblyTypeName: PackageInfoManager, Assembly-CSharp
+        m_MethodName: OnRouteABDeactivated
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnRouteBCActivated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1859374238}
+        m_TargetAssemblyTypeName: PackageInfoManager, Assembly-CSharp
+        m_MethodName: OnRouteBCActivated
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnRouteBCDeactivated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1859374238}
+        m_TargetAssemblyTypeName: PackageInfoManager, Assembly-CSharp
+        m_MethodName: OnRouteBCDeactivated
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!120 &618954736
 LineRenderer:
   m_ObjectHideFlags: 0
