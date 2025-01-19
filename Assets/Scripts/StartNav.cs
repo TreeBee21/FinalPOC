@@ -11,6 +11,8 @@ public class StartNav : MonoBehaviour
 
     public void OnQRSelected(string data)
     {
+        Debug.Log($"OnQRSelected called with data: {data}, listening: {listening}");
+
         if ((!listening) || (!(data == "1")) ) return;
         
         routeDisplay.DrawRouteAB(); 
